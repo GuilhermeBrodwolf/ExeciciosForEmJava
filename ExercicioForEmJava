@@ -1,0 +1,37 @@
+package javaapplication6;
+
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author guilherme_nones
+ */
+
+public class JavaApplication6 {
+
+    public static void main(String[] args) {
+        
+        double media = 0;
+        double somaNotas = 0;
+    
+        int qtdNotas = Integer.parseInt(JOptionPane.showInputDialog("quantas notas?"));
+        
+        for(int i = 0; i < qtdNotas; i++){
+            double nota = Double.parseDouble(JOptionPane.showInputDialog("informe a nota " + (i +1)));
+            
+            somaNotas = somaNotas + nota; // somaNotas += nota;
+        }
+        
+        media = somaNotas / qtdNotas; //gera média
+        
+        if(media < 3){
+            JOptionPane.showMessageDialog(null, "Reprovado! média" + media);
+        }else if(media >= 3 && media < 7){
+            JOptionPane.showMessageDialog(null, "Exame! média" + media);
+        }else{
+            JOptionPane.showMessageDialog(null, "Aprovado! média" + media);
+        }
+    
+    }
+    
+}
